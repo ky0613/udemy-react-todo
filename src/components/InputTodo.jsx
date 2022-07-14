@@ -1,4 +1,4 @@
-export const InputTodo = ({ todoText, onChange, onClick }) => {
+export const InputTodo = ({ todoText, onChange, onClick, disabled }) => {
   const style = {
     backgroundColor: "#c1ffff",
     width: "400px",
@@ -9,8 +9,15 @@ export const InputTodo = ({ todoText, onChange, onClick }) => {
   };
   return (
     <div style={style}>
-      <input placeholder="TODOを入力" value={todoText} onChange={onChange} />
-      <button onClick={onClick}>追加</button>
+      <input
+        disabled={disabled}
+        placeholder="TODOを入力"
+        value={todoText}
+        onChange={onChange}
+      />
+      <button disabled={disabled} onClick={onClick}>
+        追加
+      </button>
     </div>
   );
 };
